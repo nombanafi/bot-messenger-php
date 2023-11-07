@@ -1,0 +1,36 @@
+{
+    "name": "fakellyh/bot-messenger-php",
+    "description": "A PHP library streamlining the integration and smooth utilization of the Messenger API for the development of interactive chatbots.",
+    "minimum-stability": "stable",
+    "version": "1.0.1",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    },
+    "keywords": [
+        "facebook",
+        "messenger",
+        "bot messenger",
+        "facebook messenger",
+        "bot",
+        "madagascar",
+        "conversation",
+        "bot conversation"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fakell\\BotMessenger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nombana Fahendrena",
+            "email": "fakellyh@gmail.com"
+        }
+    ],
+    "license" : "MIT",
+    "require": {
+        "php": ">=7.2.5",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
