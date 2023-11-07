@@ -4,15 +4,16 @@ namespace Fakell\BotMessenger;
 
 use GuzzleHttp\RequestOptions;
 use Fakell\BotMessenger\Client;
-use Fakell\BotMessenger\Helpers\PersonasListFactory;
 use Fakell\BotMessenger\Model\Message;
 use Fakell\BotMessenger\Model\Attachment;
 use Fakell\BotMessenger\Types\MessagingType;
 use Fakell\BotMessenger\Types\NotificationType;
+use Fakell\BotMessenger\Helpers\PersonasFactory;
 use Fakell\BotMessenger\Helpers\ResponseHandler;
+use Fakell\BotMessenger\Model\Personas\Personas;
+use Fakell\BotMessenger\Helpers\PersonasListFactory;
 use Fakell\BotMessenger\Helpers\RequestOptionsFactory;
 use Fakell\BotMessenger\Model\MessengerProfile\PersistentMenu\PersistentMenu;
-use Fakell\BotMessenger\Model\Personas\Personas;
 
 class Messenger {
     use ResponseHandler;
@@ -95,14 +96,15 @@ class Messenger {
      */
     public function getPersonas($personasId) {
         $response = $this->client->send("GET", "/" . $personasId);
-        return $this->decodeResponse($response);
+        $data  = $this->decodeResponse($response);
+        return PersonasFactory::createOne($data);
     }
 
     public function getAllPersonas() {
         $response = $this->client->send("GET", "/me/personas");
         $data = $this->decodeResponse($response);
 
-        return PersonasListFactory::create($data);
+        return PersonasFactory::createList($data);
     }
     /**
      * Persistent Menu, Greeting Text, Get_started in messenger.
