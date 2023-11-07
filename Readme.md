@@ -46,7 +46,7 @@ $messenger->sendMessage(<USER_ID>, "Hello world");
 
 ## Set action status
 
-![senderAction](asstes/image/senderAction.png)
+![senderAction](assets/image/senderAction.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -66,7 +66,7 @@ See [here](https://developers.facebook.com/docs/messenger-platform/send-messages
 
 ## Send message with quick reply
 
-![Quick reply](asstes/image/quickReply.png)
+![Quick reply](assets/image/quickReply.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -93,7 +93,7 @@ $messenger->sendMessage(<USER_ID>, $message);
 
 ### Generic Template
 
-![Generic Template](asstes/image/genericTemplate.png)
+![Generic Template](assets/image/genericTemplate.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -128,7 +128,7 @@ $messenger->sendMessage(<recipient>, $message);
 
 ### Button Template
 
-![Button Template](asstes/image/buttonTemplate.png)
+![Button Template](assets/image/buttonTemplate.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -160,7 +160,7 @@ $messenger->sendMessage(<recipient>, $message);
 
 ### Media Template
 
-![Media Template Image](asstes/image/mediaTemplate-2.png) ![Media Template Video](asstes/image/mediaTemplate-1.png)
+![Media Template Image](assets/image/mediaTemplate-2.png) ![Media Template Video](assets/image/mediaTemplate-1.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -187,7 +187,7 @@ $messenger->sendMessage(<recipient>, $message);
 
 ### Receipt Template
 
-![Receipt Template](asstes/image/ReceiptTemplate.png)
+![Receipt Template](assets/image/ReceiptTemplate.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -262,7 +262,7 @@ $messenger->sendMessage(<USER_ID>, $message);
 
 ## Personas
 
-![Personas](asstes/image/Personas.png)
+![Personas](assets/image/Personas.png)
 
 ### Personas management
 
@@ -304,7 +304,7 @@ $messenger->sendMessage(<USER_ID>, "Hello", <PERSONAS_ID>);
 
 ### Persistent Menu
 
-![Persistent Menu](asstes/image/persistentMenu.jpg)
+![Persistent Menu](assets/image/persistentMenu.jpg)
 
 ```php
 use Fakell\BotMessenger\Messenger;
@@ -375,7 +375,7 @@ $messenger->setMessengerOptions($greeting);
 
 ### Get Started Button
 
-![Get started](asstes/image/getStarted.png)
+![Get started](assets/image/getStarted.png)
 
 ```php
 use Fakell\BotMessenger\Messenger;
