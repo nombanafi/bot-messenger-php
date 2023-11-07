@@ -4,4 +4,8 @@ A PHP library streamlining the integration and smooth utilization of the Messeng
 
 # Getting Started 
 
-Install via compose
+Install via composer
+
+```bash
+
+```
