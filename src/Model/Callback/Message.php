@@ -33,7 +33,7 @@ class Message {
      * @return boolean
      */
     public function hasAttachment(){
-        return $this->attachments !== null;
+        return $this->attachments !== [];
     }
 
 

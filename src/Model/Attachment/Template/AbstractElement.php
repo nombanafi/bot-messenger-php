@@ -26,8 +26,8 @@ abstract class AbstractElement implements \JsonSerializable
      * @param null|string $imageUrl
      */
     public function __construct(string $title, $subtitle = null, $imageUrl = null) {
-        TemplateValidators::validateTitleSize($title);
-        TemplateValidators::validateSubtitleSize($subtitle);
+        // TemplateValidators::validateTitleSize($title);
+        // TemplateValidators::validateSubtitleSize($subtitle);
         $this->title = $title;
         $this->subtitle = $subtitle;
         $this->imageUrl = $imageUrl;
