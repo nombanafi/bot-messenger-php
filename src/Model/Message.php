@@ -23,7 +23,7 @@ class Message implements  \JsonSerializable {
     /**
      * @var QuickReply[]
      */
-    private $quickReplies = [];
+    private $quickReplies = null;
 
 
     /**
@@ -50,6 +50,11 @@ class Message implements  \JsonSerializable {
      * @return self
      */
     public function addQuickReply(QuickReply $quickReply){
+        if($this->quickReplies == null){
+            $this->quickReplies = [$quickReply];
+            return $this;  
+        } 
+        
         $this->quickReplies = array_merge($this->quickReplies,[$quickReply]);
         return $this;
     }
