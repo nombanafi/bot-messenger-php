@@ -118,4 +118,13 @@ class Message implements  \JsonSerializable {
 
         return $this;
     }
+
+    /**
+     * Get the value of data
+     *
+     * @return  string|Attachment
+     */ 
+    public function getData(){
+        return $this->data;
+    }
 }

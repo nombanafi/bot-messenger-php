@@ -5,6 +5,7 @@ namespace Fakell\BotMessenger\Helpers;
 
 use GuzzleHttp\RequestOptions;
 use Fakell\BotMessenger\Client;
+use Fakell\BotMessenger\Model\Attachment;
 use Fakell\BotMessenger\Model\Message;
 use Fakell\BotMessenger\Model\Personas\Personas;
 use Fakell\BotMessenger\Types\MessagingType;
@@ -56,7 +57,19 @@ class RequestOptionsFactory {
         ];
 
         if($message->hasFileToUpload()){
-             // Create a multipart request
+
+            $type = $message->getData()->getType();
+            
+            if($type === Attachment::TYPE_FILE) {
+                $mimeType = "application/octect-stream";
+            } elseif ($type === Attachment::TYPE_AUDIO){
+                $mimeType = "audio/mp3";
+            } elseif ($type === Attachment::TYPE_IMAGE){
+                $mimeType = "image/png";
+            } elseif ($type === Attachment::TYPE_VIDEO){
+                $mimeType = "video/mp4";
+            }
+
             $options[RequestOptions::MULTIPART] = [
                 [
                     'name' => 'messaging_type',
@@ -77,6 +90,9 @@ class RequestOptionsFactory {
                 [
                     'name' => 'filedata',
                     'contents' => $message->getFileStream(),
+                    'headers' => [
+                        'Content-Type' => $mimeType
+                    ],
                 ],
                 [
                     "name" => "persona_id",
