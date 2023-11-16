@@ -50,7 +50,7 @@ class Message implements  \JsonSerializable {
      * @return self
      */
     public function addQuickReply(QuickReply $quickReply){
-        $this->quickReplies = array_merge($this->quickReplies, $quickReply);
+        $this->quickReplies = array_merge($this->quickReplies,[$quickReply]);
         return $this;
     }
     

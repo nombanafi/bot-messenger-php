@@ -33,7 +33,7 @@ class Messenger {
      * @param string $actionType
      * @return array
      */
-    public function setActionSatus($recipient, $actionType){
+    public function setActionStatus($recipient, $actionType){
         $options = RequestOptionsFactory::createForTyping($recipient, $actionType); 
         $response = $this->client->send("POST", "/me/messages", $options);
         return $this->decodeResponse($response);
