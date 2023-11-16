@@ -23,7 +23,7 @@ class Message implements  \JsonSerializable {
     /**
      * @var QuickReply[]
      */
-    private $quickReplies = null;
+    private $quickReplies = [];
 
 
     /**
