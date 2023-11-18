@@ -13,7 +13,7 @@ class ButtonValidators {
     public static function validateTitleSize($title)
     {
         if (mb_strlen($title) > 20) {
-            throw new \InvalidArgumentException('The button title field should not exceed 20 characters.');
+            // throw new \InvalidArgumentException('The button title field should not exceed 20 characters.');
         }
     }
 
