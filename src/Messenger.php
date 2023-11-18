@@ -35,7 +35,7 @@ class Messenger {
      */
     public function setActionStatus($recipient, $actionType){
         $options = RequestOptionsFactory::createForTyping($recipient, $actionType); 
-        $response = $this->client->send("POST", "/me/messages", $options);
+        $response = $this->client->send("POST", "me/messages", $options);
         return $this->decodeResponse($response);
     }
 
@@ -51,7 +51,7 @@ class Messenger {
     public function sendMessage($recipient, $message, $personasId = null ,$messageType = MessagingType::RESPONSE ,$notificationType = NotificationType::REGULAR) {
         $message = $this->createMessage($message);
         $options = RequestOptionsFactory::createForMessage($recipient, $message, $personasId, $messageType, $notificationType);
-        $response = $this->client->send("POST", "/me/messages", $options);
+        $response = $this->client->send("POST", "me/messages", $options);
         return $this->decodeResponse($response);
     }
 
@@ -73,7 +73,7 @@ class Messenger {
      */
     public function addPersonas(Personas $personas){
         $options [RequestOptions::FORM_PARAMS] = $personas->jsonSerialize();
-        $response = $this->client->send("POST", "/me/personas", $options);
+        $response = $this->client->send("POST", "me/personas", $options);
         return $this->decodeResponse($response);
     }
 
@@ -84,7 +84,7 @@ class Messenger {
      * @return array
      */
     public function deletePersonas($personasId) {
-        $response = $this->client->send("DELETE", "/" . $personasId);
+        $response = $this->client->send("DELETE", "" . $personasId);
         return $this->decodeResponse($response);
     }
 
@@ -95,13 +95,13 @@ class Messenger {
      * @return array
      */
     public function getPersonas($personasId) {
-        $response = $this->client->send("GET", "/" . $personasId);
+        $response = $this->client->send("GET", "" . $personasId);
         $data  = $this->decodeResponse($response);
         return PersonasFactory::createOne($data);
     }
 
     public function getAllPersonas() {
-        $response = $this->client->send("GET", "/me/personas");
+        $response = $this->client->send("GET", "me/personas");
         $data = $this->decodeResponse($response);
 
         return PersonasFactory::createList($data);
@@ -114,7 +114,7 @@ class Messenger {
      */
     public function setMessengerOptions($props) {
         $options [RequestOptions::JSON] = $props;
-        $response = $this->client->send("POST", "/me/messenger_profile", $options);
+        $response = $this->client->send("POST", "me/messenger_profile", $options);
         return $this->decodeResponse($response);
     }
 
@@ -126,7 +126,7 @@ class Messenger {
      */
     public function deleteMessengerOptions($props){
         $options = RequestOptionsFactory::createForDeleteProperties($props);
-        $response = $this->client->send("DELETE", "/me/messenger_profile", $options);
+        $response = $this->client->send("DELETE", "me/messenger_profile", $options);
         return $this->decodeResponse($response);
     }
     

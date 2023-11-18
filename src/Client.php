@@ -138,7 +138,7 @@ class Client {
      */
     private function defaultHttpClient() : ClientInterface {
         return new \GuzzleHttp\Client([
-            "base_uri" => self::API_BASE_URI . self::API_VERSION,
+            "base_uri" => self::API_BASE_URI . self::API_VERSION . "/",
             "timeout" => self::DEFAULT_TIMEOUT
         ]);
     }
