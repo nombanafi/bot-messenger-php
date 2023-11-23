@@ -42,9 +42,8 @@ class Text extends QuickReply {
     }
 
 
-    /**
-     * @inheritdoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json ["title"] = $this->title;

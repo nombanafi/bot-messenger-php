@@ -29,9 +29,8 @@ class WebUrl extends Button {
         parent::__construct(Button::TYPE_WEB_URL);
     }
 
-    /**
-     * @inheritDoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json["title"] = $this->title;

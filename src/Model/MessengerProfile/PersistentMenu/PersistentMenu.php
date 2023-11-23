@@ -31,9 +31,8 @@ class PersistentMenu implements \JsonSerializable {
         return $this;
     }
 
-    /**
-     * @return array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = [
             "persistent_menu" => $this->persistantElements

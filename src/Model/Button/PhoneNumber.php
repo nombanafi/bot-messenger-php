@@ -34,9 +34,8 @@ class PhoneNumber extends Button{
     }
 
 
-    /**
-     * @inheritDoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
 

@@ -40,9 +40,8 @@ class Postback extends Button {
         return $this->payload;
     }
 
-    /**
-     * @inheritDoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json["title"] = $this->title;

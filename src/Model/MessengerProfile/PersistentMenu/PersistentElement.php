@@ -32,6 +32,7 @@ class PersistentElement implements \JsonSerializable {
         $this->composer_input_disabled = $composer_input_disabled;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             "locale" => $this->locale,

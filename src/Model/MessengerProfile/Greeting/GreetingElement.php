@@ -32,9 +32,8 @@ class GreetingElement implements \JsonSerializable {
         $this->text = $text;
         $this->locale = $locale;
     }
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             "locale" => $this->locale,

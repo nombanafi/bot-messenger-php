@@ -86,9 +86,8 @@ class Message implements  \JsonSerializable {
     }
 
 
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return [
             $this->type => $this->data,

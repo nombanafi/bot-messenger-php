@@ -20,9 +20,8 @@ class Greeting implements \JsonSerializable {
     public function __construct($greetingElements)  {
         $this->greetingElements = $greetingElements;
     }
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return [
             self::NAME => $this->greetingElements

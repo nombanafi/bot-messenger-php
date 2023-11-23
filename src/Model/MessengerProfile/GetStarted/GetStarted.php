@@ -23,9 +23,8 @@ class GetStarted implements \JsonSerializable {
         $this->payload = $payload;
     }
     
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             self::NAME => [

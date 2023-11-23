@@ -23,9 +23,8 @@ abstract class QuickReply implements \JsonSerializable {
         $this->type = $type;
     }
 
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             "content_type" => $this->type

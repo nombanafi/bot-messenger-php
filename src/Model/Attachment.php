@@ -37,9 +37,8 @@ abstract class Attachment  implements \JsonSerializable{
         return $this->payload;
     }
 
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [

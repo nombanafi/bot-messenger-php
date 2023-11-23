@@ -42,9 +42,8 @@ class Personas implements \JsonSerializable {
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             'name' => $this->name,
