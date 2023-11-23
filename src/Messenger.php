@@ -48,9 +48,9 @@ class Messenger {
      * @param string $notificationType
      * @return array
      */
-    public function sendMessage($recipient, $message, $personasId = null ,$messageType = MessagingType::RESPONSE ,$notificationType = NotificationType::REGULAR) {
+    public function sendMessage($recipient, $message, $personasId = null ,$messageType = MessagingType::RESPONSE , $tag = null, $notificationType = NotificationType::REGULAR) {
         $message = $this->createMessage($message);
-        $options = RequestOptionsFactory::createForMessage($recipient, $message, $personasId, $messageType, $notificationType);
+        $options = RequestOptionsFactory::createForMessage($recipient, $message, $personasId, $messageType, $tag , $notificationType);
         $response = $this->client->send("POST", "me/messages", $options);
         return $this->decodeResponse($response);
     }

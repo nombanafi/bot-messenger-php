@@ -44,13 +44,14 @@ class RequestOptionsFactory {
      * @param string $notificationType
      * @return array
      */
-    public static function createForMessage($recipient, Message $message, string $personasId = null, $messagingType = MessagingType::RESPONSE ,$notificationType = NotificationType::REGULAR){
+    public static function createForMessage($recipient, Message $message, string $personasId = null, $messagingType = MessagingType::RESPONSE, $tag, $notificationType = NotificationType::REGULAR){
         $options = [];
         $data = [
             'messaging_type' => $messagingType,
             'recipient' => [
                 "id" => $recipient
             ],
+            "tag" => $tag, 
             'message' => $message,
             "persona_id" => $personasId,
             'notification_type' => $notificationType,
