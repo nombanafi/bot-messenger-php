@@ -53,9 +53,8 @@ class Generic extends Template {
         return $this->elements;
     }
 
-    /**
-     * @inheritdoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
 

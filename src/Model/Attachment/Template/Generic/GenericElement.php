@@ -32,10 +32,8 @@ class GenericElement extends AbstractElement {
         return $this;
     }
 
-    /**
-     *
-     * @inheritdoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         
         $json = parent::jsonSerialize();

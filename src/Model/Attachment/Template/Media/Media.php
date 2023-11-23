@@ -40,6 +40,7 @@ class Media extends Template{
     }
 
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $elements = [

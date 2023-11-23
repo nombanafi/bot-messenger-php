@@ -92,9 +92,8 @@ class Address implements \JsonSerializable {
         return $this->secondStreet;
     }
 
-    /**
-     * @return array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return [
             'street_1' => $this->street,

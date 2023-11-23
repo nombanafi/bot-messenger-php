@@ -65,9 +65,8 @@ class RecieptElement extends AbstractElement {
         return $this->currency;
     }
 
-    /**
-     * @return array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return array_merge( parent::jsonSerialize(), [
             'quantity' => $this->quantity,

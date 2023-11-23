@@ -182,9 +182,8 @@ class Receipt extends Template {
         $this->adjustments = $adjustments;
     }
 
-    /**
-     * @inheritdoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json["payload"] = array_merge($json["payload"],[

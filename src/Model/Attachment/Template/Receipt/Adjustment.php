@@ -36,9 +36,8 @@ class Adjustment implements \JsonSerializable {
         return $this->amount;
     }
 
-    /**
-     * @return array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             'name' => $this->name,

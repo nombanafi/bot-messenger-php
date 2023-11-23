@@ -64,9 +64,8 @@ class Summary implements \JsonSerializable {
         return $this->totalCost;
     }
 
-    /**
-     * @return array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return [
             'subtotal' => $this->subtotal,

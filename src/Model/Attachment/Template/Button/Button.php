@@ -31,9 +31,8 @@ class Button extends Template{
         return $this;
     }
 
-    /**
-     * @inheritdoc
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
 

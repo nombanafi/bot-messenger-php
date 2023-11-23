@@ -33,9 +33,8 @@ abstract class AbstractElement implements \JsonSerializable
         $this->imageUrl = $imageUrl;
     }
     
-    /**
-     * @return Array
-     */
+    
+    #[\ReturnTypeWillChange]
     public function jsonSerialize(){
         return [
             "title" => $this->title,
