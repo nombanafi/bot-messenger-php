@@ -33,7 +33,7 @@ class GreetingElement implements \JsonSerializable {
         $this->locale = $locale;
     }
     /**
-     * @return array
+     * @return mixed
      */
     public function jsonSerialize(){
         return [

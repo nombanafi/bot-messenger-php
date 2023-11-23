@@ -25,6 +25,9 @@ class Template extends Attachment {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json ["payload"] = [

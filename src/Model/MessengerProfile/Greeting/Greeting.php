@@ -21,7 +21,7 @@ class Greeting implements \JsonSerializable {
         $this->greetingElements = $greetingElements;
     }
     /**
-     * @return array
+     * @return mixed
      */
     public function jsonSerialize() {
         return [

@@ -17,6 +17,9 @@ class Button implements \JsonSerializable {
     }
     
 
+    /**
+     * @return mixed
+     */
     public function jsonSerialize() {
         return [
             "type" => $this->type
