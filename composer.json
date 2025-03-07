@@ -30,7 +30,7 @@
     ],
     "license" : "MIT",
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=8.0",
         "guzzlehttp/guzzle": "^7.0",
         "symfony/event-dispatcher": "^6.3"
     }

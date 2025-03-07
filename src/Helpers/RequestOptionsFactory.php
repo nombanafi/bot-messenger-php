@@ -23,12 +23,13 @@ class RequestOptionsFactory {
      * @param string $typingIndicator
      * @return array
      */
-    public static function createForTyping($recipient, $actionType){
+    public static function createForTyping($recipient, $actionType, $personasId = null){
         $options = [];
         $data = [
             "recipient" => [
                 "id" => $recipient
             ],
+            "persona_id" => $personasId,
             "sender_action" => $actionType,
         ];
         $options [RequestOptions::JSON] = $data;
